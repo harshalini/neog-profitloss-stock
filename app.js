@@ -35,13 +35,13 @@ function calculateProfitAndLoss() {
                     output.setAttribute("style", "animation: none");
                 }
                 output.style.color = "green";
-                output.innerText = "Congrats! You gained " + profitPercent.toFixed(2) + "% and your profit is ₹" + profit.toFixed(2) + "🤩";
+                output.innerText = "Congrats! You gained " + profitPercent.toFixed(2) + "% and your profit is ₹" + profit.toFixed(2) + " 🤩";
             } else if (costPrice > totalPrice) {
                 var loss = costPrice - totalPrice;
                 var lossPercent = (loss / costPrice) * 100;
 
 
-                output.innerText = "Ah! You lost " + lossPercent.toFixed(2) + "% and your loss is ₹" + loss.toFixed(2) + "😔";
+                output.innerText = "Ah! You lost " + lossPercent.toFixed(2) + "% and your loss is ₹" + loss.toFixed(2) + " 😔";
 
                 if (lossPercent >= 50) {
                     bodyId.setAttribute("style", "background-color: #282A35;color: white");
