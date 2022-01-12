@@ -8,14 +8,14 @@ const output = document.querySelector("#out-put");
 
 output.style.display = "none";
 
-function calculateProfitAndLoss() {
+const calculateProfitAndLoss = () => {
 
-    var bp = boughtPrice.value;
-    var q = quantity.value;
-    var cp = currentPrice.value;
+    let bp = boughtPrice.value;
+    let q = quantity.value;
+    let cp = currentPrice.value;
 
-    var costPrice = Number(bp) * Number(q);
-    var totalPrice = Number(cp) * Number(q);
+    let costPrice = Number(bp) * Number(q);
+    let totalPrice = Number(cp) * Number(q);
 
     output.style.display = "block";
 
@@ -23,8 +23,8 @@ function calculateProfitAndLoss() {
     if (bp && q && cp) {
         if (bp > 0 && q > 0 && cp > 0) {
             if (totalPrice > costPrice) {
-                var profit = totalPrice - costPrice;
-                var profitPercent = (profit / costPrice) * 100;
+                let profit = totalPrice - costPrice;
+                const profitPercent = (profit / costPrice) * 100;
 
                 bodyId.setAttribute("style", "background-image: url(./images/happy1.png");
 
@@ -37,8 +37,8 @@ function calculateProfitAndLoss() {
                 output.style.color = "green";
                 output.innerText = "Congrats! You gained " + profitPercent.toFixed(2) + "% and your profit is ₹" + profit.toFixed(2) + " 🤩";
             } else if (costPrice > totalPrice) {
-                var loss = costPrice - totalPrice;
-                var lossPercent = (loss / costPrice) * 100;
+                let loss = costPrice - totalPrice;
+                const lossPercent = (loss / costPrice) * 100;
 
 
                 output.innerText = "Ah! You lost " + lossPercent.toFixed(2) + "% and your loss is ₹" + loss.toFixed(2) + " 😔";
@@ -57,7 +57,8 @@ function calculateProfitAndLoss() {
                 output.style.color = "black";
                 output.innerText = "No profit, no loss, safe game 😉";
             }
-        } else {
+        } 
+        else {
             removeStyles();
             output.style.color = "black";
             output.innerText = "Please enter values greater than 0";
@@ -69,12 +70,7 @@ function calculateProfitAndLoss() {
     }
 }
 
-function percentage(cash, initialPrice) {
-    var percent = (cash / initialPrice) * 100;
-    output.innerText = "You gained " + percent + "%";
-}
-
-function removeStyles() {
+const removeStyles = () => {
     bodyId.setAttribute("style", "background-color: none");
     output.setAttribute("style", "animation: none");
 }
